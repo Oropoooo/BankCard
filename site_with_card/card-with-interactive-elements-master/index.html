@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Интерактивная карта</title>
+        <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon"/>
+        <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <script defer src="js/script.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Grotesk:500&display=swap">
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="cards-wrapper">
+                    <picture data-pg-ia='{"l":[{"name":"front-card","trg":"now","t":"this","a":"jackInTheBox"}]}'>
+                        <img src="img/bg-card-front.png" class="front-card" id="front-card" alt="front-card" loading="lazy">
+                        <img src="img/card-logo.svg" alt="card-logo" class="card-logo" data-pg-ia='{"l":[{"name":"card-logo","t":"this","a":"zoomInUp","trg":"load"}]}'>
+                        <span class="card-number" id="card-number">0000 0000 0000 0000</span>
+                        <div class="card-details" id="card-details">
+                            <span class="card-holder-name" id="card-holder-name">NAME SURNAME</span>
+                            <span class="card-date" id="card-date">00/00</span>
+                        </div>
+                    </picture>
+                    <picture data-pg-ia='{"l":[{"name":"back-card","trg":"now","t":"this","a":"slideInLeft"}]}'>
+                        <img src="img/bg-card-back.png" class="back-card" id="back-card" alt="back-card" loading="lazy">
+                        <span class="card-cvc" id="card-cvc">000</span>
+                    </picture>
+                </div>
+                <form data-pg-ia='{"l":[{"name":"form","trg":"load","t":"this","a":"fadeInUp"}]}'>
+                    <div class="form-card-name form-name">
+                        <label for="cardholdername">Cardholder name</label>
+                        <input name="cardholdername" type="text" id="cardholdername" placeholder="e.g. Name Surname" required maxlength="30">
+                        <span class="error-msg" id="name-error-msg">Wrong format, text only</span>
+                        <span class="warning-msg" id="name-warning-msg">Can't be blank</span>
+                    </div>
+                    <div class="form-card-number">
+                        <label for="Cardnumber">Card number</label>
+                        <input name="Cardnumber" type="text" id="Cardnumber" required="true" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+                        <span class="error-msg" id="number-error-msg">Wrong format, number only</span>
+                        <span class="warning-msg" id="number-warning-msg">Can't be blank</span>
+                    </div>
+                    <div class="form-card-extra-details">
+                        <div class="form-card-date">
+                            <label for="Cardmonth">Exp. Date (MM/YY)</label>
+                            <div class="card-date-input">
+                                <input name="Cardmonth" type="text" id="Cardmonth" required="true" placeholder="MM" maxlength="2">
+                                <input name="Cardyear" type="text" id="Cardyear" required="true" placeholder="YY" maxlength="2">
+                            </div>
+                            <span class="error-msg" id="date-error-msg">Wrong format, number only</span><span class="warning-msg" id="date-warning-msg">Can't be blank</span>
+                        </div>
+                        <div class="form-card-cvc">
+                            <label for="CVC">Card CVC</label>
+                            <input name="CVC" type="text" id="CVC" required="true" placeholder="e.g. 123" maxlength="3">
+                            <span class="error-msg" id="cvc-error-msg">Wrong format, number only</span>
+                            <span class="warning-msg" id="cvc-warning-msg">Can't be blank</span>
+                        </div>
+                    </div>                     
+                    <button id="confirm" type="submit">Confirm</button>
+                </form>
+                <div class="confirmation">
+                    <img src="img/icon-complete.svg">
+                    <h1>Thank you!</h1>
+                    <p>We&apos;ve added your card details</p>
+                    <button id="continue" type="submit">Continue</button>
+                </div>
+            </div>
+        </main>
+        <script src="pgia/lib/pgia.js"></script>
+    </body>
+</html>
